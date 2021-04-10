@@ -34,21 +34,18 @@
 #include "resource_manager.h"
 
 //=======================================================================================
-// static初期化
-//=======================================================================================
-CCamera *CGame::m_pCamera = nullptr;
-CLight *CGame::m_pLight = nullptr;
-CMeshField *CGame::m_pMeshField = nullptr;
-CBg *CGame::m_pBg = nullptr;
-CPlayer *CGame::m_pPlayer = nullptr;
-CPause *CGame::m_pPause = nullptr;
-CSea *CGame::m_pSea = nullptr;
-
-//=======================================================================================
 // コンストラクタ
 //=======================================================================================
 CGame::CGame()
 {
+	m_pCamera = nullptr;
+	m_pLight = nullptr;
+	m_pMeshField = nullptr;
+	m_pBg = nullptr;
+	m_pPlayer = nullptr;
+	m_pPause = nullptr;
+	m_pSea = nullptr;
+
 	m_bGameEnd = false;
 	m_nTimeCounter = 0;
 }

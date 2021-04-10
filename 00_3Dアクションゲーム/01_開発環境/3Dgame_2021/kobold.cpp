@@ -226,7 +226,7 @@ void CKobold::UpdateMotionState(void)
 			if (nCountMotion == 0)
 			{
 				// プレイヤー情報
-				CPlayer *pPlayer = CGame::GetPlayer();
+				CPlayer *pPlayer = GET_PLAYER_PTR;
 
 				// nullchack
 				if (pPlayer != nullptr)
@@ -425,26 +425,6 @@ void CKobold::UpdateMotionState(void)
 			}
 		}
 		break;
-
-		// やられモーション状態
-//	case KOBOLD_MOTION_DAMAGE:
-//
-//		// 現在のキー
-//		if (nKey == 0)
-//		{
-//			// 現在のモーションカウント
-//			if (nCountMotion == 0)
-//			{
-//				// 光のエフェクト
-//				CEffectFactory::CreateEffect(D3DXVECTOR3(
-//					GetModelAnime(KOBOLD_PARTS_NUM_BODY)->GetMtxWorld()._41,
-//					GetModelAnime(KOBOLD_PARTS_NUM_BODY)->GetMtxWorld()._42,
-//					GetModelAnime(KOBOLD_PARTS_NUM_BODY)->GetMtxWorld()._43),
-//					CEffectFactory::EFFECT_NUM_ATTACK_LIGHT);
-//			}
-//		}
-//
-//		break;
 	}
 }
 
@@ -455,7 +435,7 @@ void CKobold::UpdateMotionState(void)
 void CKobold::Attack(void)
 {
 	// プレイヤーの情報
-	CPlayer *pPlayer = CGame::GetPlayer();		// メモリ確保
+	CPlayer *pPlayer = GET_PLAYER_PTR;		// メモリ確保
 	D3DXVECTOR3 Ppos = pPlayer->GetPos();		// 座標取得
 
 	// 直線距離の制限

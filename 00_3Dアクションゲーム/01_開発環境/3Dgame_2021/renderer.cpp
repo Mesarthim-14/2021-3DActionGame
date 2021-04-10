@@ -21,7 +21,7 @@
 //=============================================================================
 CRenderer::CRenderer()
 {
-	m_pD3D = NULL;			// Direct3Dオブジェクト
+	m_pD3D = nullptr;			// Direct3Dオブジェクト
 	m_fillMode = D3DFILL_SOLID;
 }
 
@@ -196,17 +196,20 @@ void CRenderer::Draw(void)
 		D3DXMATRIX matProj, matView, matWorld;
 		D3DXMATRIX trans;
 
-		// カメラが使われていたら
-		if (CGame::GetCamera() != NULL)
+		if (CManager::GetGame() != nullptr)
 		{
 			// カメラのポインタ取得
-			CCamera *pCamera = CGame::GetCamera();
-			pCamera->SetCamera();
+			CCamera *pCamera = CManager::GetGame()->GetCamera();
 
-			// バックバッファ＆Ｚバッファのクリア
-			m_pD3DDevice->Clear(0, NULL, (D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER), D3DCOLOR_RGBA(0, 255, 255, 0), 1.0f, 0);
+			// カメラが使われていたら
+			if (pCamera != nullptr)
+			{
+				pCamera->SetCamera();
+
+				// バックバッファ＆Ｚバッファのクリア
+				m_pD3DDevice->Clear(0, NULL, (D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER), D3DCOLOR_RGBA(0, 255, 255, 0), 1.0f, 0);
+			}
 		}
-
 		//オブジェクトクラスの全描画処理呼び出し
 		CScene::DrawAll();
 

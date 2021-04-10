@@ -43,20 +43,20 @@ public:
 	void Draw(void);					// 描画処理
 	void SetGame(void);					// ゲームの設定
 
-	static CGame* Create();				// ゲーム生成情報
-	static CCamera *GetCamera(void);	// カメラのポインタ情報
-	static CLight *GetLight(void);		// ライトのポインタ情報
-	static CPlayer *GetPlayer(void);	// プレイヤーのポインタ情報
-	static CPause *GetPause(void);		// ポーズ画面のポインタ情報
+	CGame* Create();				// ゲーム生成情報
+	CCamera *GetCamera(void);	// カメラのポインタ情報
+	CLight *GetLight(void);		// ライトのポインタ情報
+	CPlayer *GetPlayer(void);	// プレイヤーのポインタ情報
+	CPause *GetPause(void);		// ポーズ画面のポインタ情報
 
 private:	
-	static CCamera *m_pCamera;			// カメラのポインタ	
-	static CLight *m_pLight;			// ライトのポインタ
-	static CMeshField *m_pMeshField;	// メッシュフィールドのポインタ
-	static CBg *m_pBg;					// 背景のポインタ
-	static CPlayer *m_pPlayer;			// プレイヤーのポインタ
-	static CSea *m_pSea;				// 海のポインタ
-	static CPause *m_pPause;			// ポーズのポインタ
+	CCamera *m_pCamera;			// カメラのポインタ	
+	CLight *m_pLight;			// ライトのポインタ
+	CMeshField *m_pMeshField;	// メッシュフィールドのポインタ
+	CBg *m_pBg;					// 背景のポインタ
+	CPlayer *m_pPlayer;			// プレイヤーのポインタ
+	CSea *m_pSea;				// 海のポインタ
+	CPause *m_pPause;			// ポーズのポインタ
 	LPD3DXFONT m_pFont;					// デバック用フォント
 	int m_nTimeCounter;					// ゲームのカウンター
 	bool m_bGameEnd;					// ゲームのエンドフラグ

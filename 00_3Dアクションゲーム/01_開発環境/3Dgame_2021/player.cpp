@@ -853,7 +853,7 @@ void CPlayer::Walk(void)
 	CInputKeyboard *pKeyboard = CManager::GetKeyboard();					// キーボード更新
 	DIJOYSTATE js = CInputJoypad::GetStick(0);								// ジョイパッドの取得
 	CSound *pSound = CManager::GetResourceManager()->GetSoundClass();		// サウンドのポインタ
-	float fAngle = CGame::GetCamera()->Getφ();								// カメラの角度
+	float fAngle = GET_CAMERA_PTR->Getφ();									// カメラの角度
 	D3DXVECTOR3 pos = GetPos();												// 座標
 	D3DXVECTOR3 rot = GetRot();												// 角度
 	float fSpeed = GetSpeed();												// スピード
@@ -1263,7 +1263,7 @@ void CPlayer::AttackMove(float fSpeed)
 
 	float fAngle3 = atan2f((float)js.lX, -(float)js.lY);	// コントローラの角度
 	float fAngle2 = atan2f(-(float)js.lX, (float)js.lY);
-	float fAngle = CGame::GetCamera()->Getφ();
+	float fAngle = GET_CAMERA_PTR->Getφ();
 
 	// スティックが入力されていたら
 	if (js.lY != 0 || js.lX != 0)

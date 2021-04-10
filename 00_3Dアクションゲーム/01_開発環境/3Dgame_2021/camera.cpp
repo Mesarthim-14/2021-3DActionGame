@@ -111,14 +111,17 @@ void CCamera::Update(void)
 	D3DXVECTOR3 PlayerPos;	//プレイヤー位置
 	D3DXVECTOR3 PlayerRot;	//プレイヤー角度
 
+	// プレイヤーのポインタ取得
+	CPlayer *pPlayer = GET_PLAYER_PTR;
+
 	// プレイヤーが使われていたら
-	if (CGame::GetPlayer() != nullptr)
+	if (pPlayer != nullptr)
 	{
 		//プレイヤー1位置取得
-		PlayerPos = CGame::GetPlayer()->GetPos();
+		PlayerPos = pPlayer->GetPos();
 
 		//プレイヤー1角度取得
-		PlayerRot = CGame::GetPlayer()->GetRot();
+		PlayerRot = pPlayer->GetRot();
 
 		// 通常状態のカメラ移動
 		NomalUpdate(PlayerPos, PlayerRot);
@@ -139,7 +142,7 @@ void CCamera::NomalUpdate(D3DXVECTOR3 PlayerPos, D3DXVECTOR3 PlayerRot)
 	// 角度の取得
 	float fAngle3 = atan2f((float)js.lX, -(float)js.lY);	// コントローラの角度
 	float fAngle2 = atan2f(-(float)js.lX, (float)js.lY);	// コントローラの角度
-	float fAngle = CGame::GetCamera()->Getφ();				// カメラの角度
+	float fAngle = Getφ();				// カメラの角度
 
 	// メモリ確保
 	CScene *pScene = nullptr;

@@ -152,7 +152,7 @@ void CRoarFire::Draw(void)
 void CRoarFire::Collision(void)
 {
 	// プレイヤーのポインタ
-	CPlayer *pPlayer = CGame::GetPlayer();
+	CPlayer *pPlayer = GET_PLAYER_PTR;
 
 	// !nullcheck
 	if (pPlayer != nullptr)

@@ -18,6 +18,8 @@
 #define GET_TEXTURE_PTR	(CManager::GetResourceManager()->GetTextureClass())	// テクスチャのポインタ
 #define GET_SOUND_PTR	(CManager::GetResourceManager()->GetSoundClass())	// サウンドのポインタ
 #define GET_XFILE_PTR	(CManager::GetResourceManager()->GetXfileClass())	// Xファイルのポインタ
+#define GET_PLAYER_PTR	(CManager::GetGame()->GetPlayer())					// プレイヤーのポインタ
+#define GET_CAMERA_PTR	(CManager::GetGame()->GetCamera())					// カメラのポインタ
 
 //=============================================================================
 //前方宣言

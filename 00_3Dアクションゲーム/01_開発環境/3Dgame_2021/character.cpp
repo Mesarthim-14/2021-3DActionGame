@@ -467,7 +467,7 @@ bool CCharacter::AttackCollision(void)
 						nDamage += rand() % PLAYER_ATTACK_RAND_DAMAGE - rand() % PLAYER_ATTACK_RAND_DAMAGE;
 
 						// ポインタ取得
-						CPlayer *pPlayer = CGame::GetPlayer();
+						CPlayer *pPlayer = GET_PLAYER_PTR;
 
 						int nNum = 0;
 
@@ -518,7 +518,7 @@ bool CCharacter::AttackCollision(void)
 	case CHARACTER_TYPE_ENEMY:
 	{
 		// エネミーの時
-		CPlayer *pPlayer = CGame::GetPlayer();
+		CPlayer *pPlayer = GET_PLAYER_PTR;
 
 		D3DXVECTOR3 WorldPos = D3DXVECTOR3(
 			m_apModelAnime.at(m_nWeaponTipNum)->GetMtxWorld()._41,

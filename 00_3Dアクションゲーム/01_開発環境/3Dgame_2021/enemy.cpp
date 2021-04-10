@@ -172,7 +172,7 @@ void CEnemy::Perception(void)
 	if (m_bPerception == true)
 	{
 		// プレイヤーの情報
-		CPlayer *pPlayer = CGame::GetPlayer();		// メモリ確保
+		CPlayer *pPlayer = GET_PLAYER_PTR;		// メモリ確保
 		D3DXVECTOR3 Ppos = pPlayer->GetPos();		// 座標取得
 
 		// 直線距離の制限
@@ -187,8 +187,8 @@ void CEnemy::Perception(void)
 
 		//自機と敵の距離
 		float fDistance = sqrtf(
-			powf((Ppos.x - GetPos().x), 2) +
-			powf((Ppos.z - GetPos().z), 2));
+			powf((Ppos.x - fEposX), 2) +
+			powf((Ppos.z - fEposZ), 2));
 
 		// 離れていたら
 		if (fDisLimit <= fDistance)
@@ -257,7 +257,7 @@ void CEnemy::Death(void)
 void CEnemy::Attack(void)
 {
 	// プレイヤーの情報
-	CPlayer *pPlayer = CGame::GetPlayer();		// メモリ確保
+	CPlayer *pPlayer = GET_PLAYER_PTR;		// メモリ確保
 	D3DXVECTOR3 Ppos = pPlayer->GetPos();		// 座標取得
 
 	// 直線距離の制限

@@ -23,7 +23,7 @@ class CQuestLogo : public CUi
 {
 public:
 	CQuestLogo();		// コンストラクタ
-	~CQuestLogo();	// デストラクタ
+	~CQuestLogo();		// デストラクタ
 
 	static CQuestLogo *Create(void);	// オブジェクト生成
 
